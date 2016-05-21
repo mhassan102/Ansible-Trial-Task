@@ -1,0 +1,9 @@
+# svn install
+
+- name: install the latest version of svn redhat
+  yum: name=subversion state=latest
+  when: ansible_os_family == "RedHat"
+
+- name: install the laster version of svn debian
+  apt: name=subversion state=present
+  when: ansible_os_family == "Debian"

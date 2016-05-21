@@ -1,0 +1,8 @@
+# Change vars as per requirement 
+
+instance_type: t2.micro
+security_group: MySecurityGroupSSHOnly
+image: ami-42b0db22
+region: us-west-1
+keypair: my-ec2-key
+tag_name: hassan

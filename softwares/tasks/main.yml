@@ -1,0 +1,6 @@
+# Include software yml and test cases here
+
+- include: jdk.yml
+- include: svn.yml
+- include: git.yml
+- include: test.yml

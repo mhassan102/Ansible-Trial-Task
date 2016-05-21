@@ -1,0 +1,25 @@
+# Test cases for software installed add here
+
+- name: Check installed git version
+  command: git --version
+  register: git
+- name: stdout git version
+  debug: msg={{ git.stdout }}
+- name: stderr git version
+  debug: msg={{ git.stderr }}
+
+- name: Check installed svn version
+  command: svn --version
+  register: svn
+- name: stdout svn version
+  debug: msg={{ svn.stdout }}
+- name: stderr svn version
+  debug: msg={{ svn.stderr }}
+
+- name: Check installed jdk version
+  command: java -version
+  register: java
+- name: stdout java version
+  debug: msg={{ java.stdout }}
+- name: stderr java version
+  debug: msg={{ java.stderr }}

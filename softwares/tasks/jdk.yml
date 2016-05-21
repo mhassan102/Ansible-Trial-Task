@@ -1,0 +1,31 @@
+# jdk 1.8 install
+
+- name: Download package
+  tags: download_jdk
+  get_url:
+    url={{ download_url }}
+    dest={{ java_archive }}
+    validate_certs=no
+    headers='Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
+
+- name: Unpack archive
+  unarchive:
+    src={{ java_archive }}
+    dest={{ download_folder }}
+    copy=no
+
+- name: Fix ownership
+  file: 
+    state=directory 
+    path={{java_name}} 
+    owner=root 
+    group=root 
+    recurse=yes
+
+- name: Make Java available for system
+  command: 'alternatives --install "/usr/bin/java" "java" "{{java_name}}/bin/java" 2000'
+
+- name: Clean up
+  file: 
+    state=absent 
+    path={{ java_archive }}

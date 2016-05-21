@@ -1,0 +1,18 @@
+# Define Playbook(s) here
+
+- name: Instance Creation
+  hosts: localhost
+  tags: instance_create
+  connection: local
+  gather_facts: False
+  roles:
+    - { role: aws }
+
+- name: Start Provisioning
+  gather_facts: true   
+  hosts: ec2hosts 
+  user: ec2-user
+  tags: start_provision
+  sudo: yes
+  roles:
+    - { role: softwares }
