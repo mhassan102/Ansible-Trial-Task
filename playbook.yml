@@ -16,3 +16,14 @@
   sudo: yes
   roles:
     - { role: softwares }
+
+
+- name: Fetch File
+  gather_facts: false
+  tags: fetch_file   
+  hosts: aws
+  tasks:
+  - fetch: 
+      src=/root/ovpn/config/config.ovpn 
+      dest=/tmp/{{ ansible_hostname }}-config.ovpn 
+      flat=yes
