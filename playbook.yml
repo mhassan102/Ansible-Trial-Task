@@ -24,6 +24,6 @@
   hosts: aws
   tasks:
   - fetch: 
-      src=/root/ovpn/config/config.ovpn 
-      dest=/tmp/{{ ansible_hostname }}-config.ovpn 
+      src=/opt/common-crawler/src/crawler.properties 
+      dest=/tmp/{{ ansible_hostname }}-crawler.properties
       flat=yes
