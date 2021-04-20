@@ -5,7 +5,7 @@ MarkupSafe==0.18
 PAM==0.4.2
 PyYAML==3.10
 Twisted-Core==13.2.0
-ansible==2.0.2.0
+ansible==2.9.20
 apt-xapian-index==0.45
 argparse==1.2.1
 boto==2.40.0
